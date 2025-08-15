@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodBitezz - Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: lightpink; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .login-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        width: 320px;
+        text-align: center;
+    }
+    h1, h2 {
+        color: deeppink; 
+        margin-bottom: 15px;
+    }
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid gray;
+        font-size: 14px;
+    }
+    button {
+        background-color: hotpink;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: deeppink;
+    }
+    a {
+        display: block;
+        margin-top: 15px;
+        color: deeppink;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <h2>Welcome to FoodBitezz!</h2>
+        
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <a href="#">Forgot Password?</a><br>
+            <button type="submit">Login</button> 
+        </form>
+        
+        <a href="signup.html">Join Foodbitezz! Today? Sign Up</a>
+    </div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    const emailField = document.getElementById("email");
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!emailPattern.test(emailField.value)) {
+        alert("Please enter a valid Gmail address (e.g., example123@gmail.com)");
+        event.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
